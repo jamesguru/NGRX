@@ -42,7 +42,7 @@
 
     background-color: #D78287;
 
-    width: 300px;
+    width: 150px;
 
     height: 100px;
 
@@ -73,5 +73,9 @@ button{
 
     width: 100px;
 
-    margin-top: 50px;
+    margin: 50px;
+
+
+    cursor: pointer;
+    
 }
