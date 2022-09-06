@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
+import { State } from './state/user.interface';
 
 
 
@@ -21,8 +22,8 @@ export class AuthComponent implements OnInit {
 
   password!:string;
 
-  username$!: Observable<any>;
-  constructor(private store: Store<any>) { }
+  
+  constructor(private store: Store<State>) { }
 
   ngOnInit(): void {
 

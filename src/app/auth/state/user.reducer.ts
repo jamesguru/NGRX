@@ -1,25 +1,34 @@
-import { createReducer, on, createAction, Action } from "@ngrx/store";
+import { createReducer, on, createAction, Action, createFeatureSelector, createSelector } from "@ngrx/store";
+import { State, UserState } from "./user.interface";
 
 
 
   
+const initialState:UserState= {
+
+    name:'John Doe',
+
+    password:'12345'
+}
 
 
-export const userReducer  = createReducer(
+const getUserFeatureState = createFeatureSelector<UserState>('user');
+
+export const getShowUser = createSelector(
+
+    getUserFeatureState,
+
+    state => {state.name, state.password}
+)
+
+export const userReducer  = createReducer<UserState>(
 
 
-    { name: 'John Doe', password: '12345671'},
+    initialState,
 
 
     on( createAction('add user'), (state,action:any) => {
-
-
-
-        console.log('Heloooooooooo reducer')
-
-        console.log(action.payload.name)
-
-        
+ 
 
        return {
 
@@ -29,7 +38,7 @@ export const userReducer  = createReducer(
         
         name:action.payload.name,
 
-        password:action.payload.name,
+        password:action.payload.password,
 
         
        } 
