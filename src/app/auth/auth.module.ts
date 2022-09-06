@@ -5,6 +5,7 @@ import { AuthRoutingModule } from './auth-routing.module';
 import { AuthComponent } from './auth.component';
 import { StoreModule } from '@ngrx/store';
 import { userReducer } from './state/user.reducer';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -15,7 +16,9 @@ import { userReducer } from './state/user.reducer';
     CommonModule,
     AuthRoutingModule,
 
-    StoreModule.forFeature('user',userReducer)
+    StoreModule.forFeature('user',userReducer),
+
+    FormsModule
   ]
 })
 export class AuthModule { }

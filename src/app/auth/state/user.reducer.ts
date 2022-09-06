@@ -1,16 +1,23 @@
 import { createReducer, on, createAction, Action } from "@ngrx/store";
 
+
+
+  
+
+
 export const userReducer  = createReducer(
 
 
-    { name: 'John Doe'},
+    { name: 'John Doe', password: '12345671'},
 
 
-    on( createAction('add user'), state => {
+    on( createAction('add user'), (state,action:any) => {
 
 
 
         console.log('Heloooooooooo reducer')
+
+        console.log(action.payload.name)
 
         
 
@@ -20,7 +27,9 @@ export const userReducer  = createReducer(
 
 
         
-        name:'James'
+        name:action.payload.name,
+
+        password:action.payload.name,
 
         
        } 
